@@ -1,0 +1,218 @@
+.card
+{
+    
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    // background-color:orangered;
+    position: relative;
+    height:52rem;
+
+  &__side
+  {
+    // background-color:orangered;
+    height:52rem;
+    transition: all .8s ease;
+    // color:#fff;
+    // font-size:2rem;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    overflow:hidden;
+    backface-visibility:hidden;
+    border-radius:3px;
+    box-shadow:0 1.5rem 4rem rgba($color-black,.15);
+    //by doing position absolute card height is gone as we dont give any height to .card lass
+    // and here there is no hack like clearfix , so give .card as the same height as we give it to
+    &--front
+    {
+      background-color:$color-white;
+      color:black;
+
+
+    }
+    &--back
+    {
+      // background-color:green;
+      //point to be noted here 
+      transform:rotateY(180deg);
+      &-1
+      {
+        background-image:linear-gradient(to right bottom,$color-secondary-light,$color-secondary-dark);
+      }
+
+      &-3
+      {
+        background-image:linear-gradient(to right bottom,$color-tertiary-light,$color-tertiary-dark);
+
+      }
+      &-2
+      {
+        background-image:linear-gradient(to right bottom,$color-primary-light,$color-primary-dark);
+
+      }
+    }
+
+  }
+  //iska matlab hai hover bhi card__side waale pe hi work karega 
+    &:hover &__side--front{
+        transform:rotateY(-180deg);
+
+    }
+    &:hover &__side--back{
+      transform:rotateY(0deg);
+
+  }
+  //front style styling
+  &__picture
+  {
+    background-size:cover;
+    height:23rem;
+    background-blend-mode:screen;
+    clip-path:polygon(0 0,100% 0,100% 85%,0 100%);
+  -webkit-clip-path:polygon(0 0,100% 0,100% 85%,0 100%);
+border-top-left-radius:3px;
+border-top-right-radius:3px;
+
+    &--1
+    {
+      background-image:linear-gradient(to right bottom,$color-secondary-light,$color-secondary-dark),
+      url(../../img/nat-5.jpg);
+      // opacity:.5;
+      // background-blend-mode:screen;
+
+    }
+    &--2
+    {
+      background-image:linear-gradient(to right bottom,$color-primary-light,$color-primary-dark),
+      url(../../img/nat-6.jpg);
+    }
+     &--3
+    {
+      background-image:linear-gradient(to right bottom,$color-tertiary-light,$color-tertiary-dark),
+      url(../../img/nat-7.jpg);
+    }
+  }
+  &__heading
+  {
+    font-size:2.8rem;
+    font-weight:300;
+    text-transform:uppercase;
+    color:$color-white;
+    // background-color:red;
+    position:absolute;
+  top:12rem;
+  right:2rem;
+  text-align: right;
+  width:75%;
+
+
+  }
+  &__heading-span
+  {
+    // yaha badhiya point aaya ki hamne jab padding lagayi ,
+    //  to left mein the "The" se pehle aari hai or right mein "explorer" ke baad iska 
+    // karan yeh hai ki "The Sea Explorer" line is considered as a single line .
+
+   padding: 1rem 1.5rem; 
+   -webkit-box-decoration-break:clone;
+  // 
+   box-decoration-break:clone;
+
+
+    &--1
+    {
+      background-image:linear-gradient(to right bottom,
+      rgba($color-secondary-light,.85),
+      rgba($color-secondary-dark,.85));
+
+      // background-image:linear-gradient(to right bottom,$color-secondary-light,$color-secondary-dark);
+
+      // background-color:red;
+    }
+    &--2
+    {
+      background-image:linear-gradient(to right bottom,
+      rgba($color-primary-light,.85),
+      rgba($color-primary-dark,.85));
+
+      // background-image:linear-gradient(to right bottom,$color-secondary-light,$color-secondary-dark);
+
+      // background-color:red;
+    }
+    &--3
+    {
+      background-image:linear-gradient(to right bottom,
+      rgba($color-tertiary-light,.85),
+      rgba($color-tertiary-dark,.85));
+
+      // background-image:linear-gradient(to right bottom,$color-secondary-light,$color-secondary-dark);
+
+      // background-color:red;
+    }
+
+
+  
+  }
+
+&__details
+{
+  padding:3rem;
+  ul
+  {
+    list-style:none;
+    width:80%;
+    margin:0 auto;
+
+    li
+    {
+      text-align: center;
+      font-size:1.5rem;
+      padding:1rem;
+
+      &:not(:last-child)
+      {
+       border-bottom: 1px solid $color-grey-light-2; 
+      }
+      
+
+
+    }
+  }
+}
+&__cta
+{
+  position:absolute;
+  top:50%;
+  left:50%;
+   transform:translate(-50%,-50%);
+width:90%;
+text-align:center;
+
+}
+&__price-box
+{
+  text-align: center;
+  color:$color-white;
+  margin-bottom:8rem;
+
+}
+&__price-only
+{
+  font-size:1.4rem;
+  text-transform: uppercase;
+
+
+
+}
+&__price-val
+{
+  font-size:6rem;
+  font-weight:100;
+  // content:"jai maata di";
+
+
+}
+
+
+}

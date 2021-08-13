@@ -1,0 +1,48 @@
+.composition
+{
+    position:relative;
+
+    &__photo
+    {
+        width:55%;
+        // // box-shadow:
+        box-shadow:0 1.5rem 4rem rgba(0,0,0,.4);
+        border-radius:2px;
+        position:absolute;
+        z-index:10;
+        transition:all .2s;
+        outline-offset:2rem;
+
+        // jab  hamne upar waale ki positiining set kari, toh yeh reference ke liye apne imidiate parent ke positioning dekhega , so we have to define positionig for parent element also
+
+        &--p1
+        {
+            left:0;
+            top:-2rem;
+        }
+        &--p2
+        {
+            right:0rem;  // moving 0 px from right side of the container ,
+            top:2rem;
+        }
+         &--p3
+        {
+            left:20%;
+            top:10rem;
+        }
+        &:hover
+        {
+            //yaha yeh border ke tarah work kar raha hai , but magic is happen later 
+            outline:1.5rem solid $color-primary;
+
+          transform:scale(1.05) translateY(-.5rem) ;  
+          box-shadow:0 2.5rem 4rem rgba(0,0,0,.5);
+            z-index:20;
+        }
+    }
+
+    &:hover &__photo:not(:hover)
+    {
+         transform:scale(.95);
+    }
+}

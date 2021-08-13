@@ -1,0 +1,84 @@
+.story
+{
+    width:75%;
+    margin:0 auto;
+    box-shadow:0 3rem 6rem rgba($color-black,.1);
+    background-color:rgba($color-white,.6);
+    border-radius:3px;
+    padding:6rem;
+    padding-left:9rem;
+    font-size: $default-font-size;
+    transform:skew(-12deg);
+
+    // & > *
+    // {
+    //     // transform:skew(12deg);
+    //     // yeh chhez img pe work nahi kari kyoki uspe pehle se transform lag raha hai -3rem waala 
+         
+    // }
+
+    &__shape
+    {
+       width:15rem;
+       height:15rem;
+    //    background-color:orangered;
+       float:left;
+       -webkit-shape-outside:circle(50% at 50% 50%);
+       //mein soch raha tha isse circle mein convert hojega box ,par huya kya ki jo text part ka left side hai ,wo circular shape menin aagaya , 
+       shape-outside:circle(50% at 50% 50%); 
+       -webkit-clip-path:circle(50% at 50% 50%); 
+        clip-path:circle(50% at 50% 50%); 
+        transform:translateX((-3rem)) skewX(12deg);
+        position:relative;        
+        // is waale transform ki precedence jyada hai as compared ton uppar given ke 
+    }
+    &__img
+    {
+        //pehle yeh diya 
+        // width:100%;
+        height:100%;
+        transform:translate(-4rem) scale(1.4);
+        backface-visibility: hidden;
+        transition:all .5s;
+
+
+    }
+    &__text
+    {
+        transform: skewX(12deg);
+    }
+    &__caption
+    {
+        position:absolute;
+        top:50%;
+        left:50%;
+        // translate:()
+        transform:translate(-50%, 0%);
+        color:$color-white;
+        text-transform:uppercase;
+        font-size:1.7rem;
+        text-align:center; 
+        opacity:0;
+        transition:all .5s;
+        backface-visibility: hidden;
+
+
+
+
+
+    }
+    &:hover &__caption
+    {
+        opacity:1;
+        // transform:translateY(-50%);
+        transform:translate(-50%, -50%);
+
+    }
+    &:hover &__img
+    {
+    transform:translate(-4rem) scale(1);   
+    filter:blur(3px) brightness(80%);
+
+    }
+
+}

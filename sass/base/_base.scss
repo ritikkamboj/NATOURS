@@ -1,0 +1,36 @@
+
+
+*,
+*::before,
+*::after
+{
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+    /* box-sizing:border-box */
+
+}
+html
+{
+    /* 1rem is equal to root font pixel size , here 1rem=10px; */
+    /* 10px karne se site ke font-size ki value 10px ke according hi change hogi , chahe hum bworser ki setting mein jaake bhi change karde ise , and that's a bad practice 
+    it is required because people with weak eyesite uses that feature  */
+    font-size:62.5%; 
+}
+body{
+
+        box-sizing: border-box;
+
+    // font-family: "Lato",sans-serif;
+    // font-weight:400;
+    // font-size:16px;
+    // line-height:1.7;
+    // // color:rgb(138, 48, 48);
+    // color:$color-grey-dark;
+    // padding:3rem;
+
+
+}
+
+
+
